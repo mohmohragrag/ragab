@@ -5,9 +5,9 @@ from automation import automate_location
 app = Flask(__name__)
 
 # Twilio credentials
-TWILIO_PHONE_NUMBER = 'your_twilio_phone_number'
-TWILIO_ACCOUNT_SID = 'your_account_sid'
-TWILIO_AUTH_TOKEN = 'your_auth_token'
+TWILIO_PHONE_NUMBER = '+1 954 951 8621'  # رقم Twilio الذي حصلت عليه
+TWILIO_ACCOUNT_SID = 'AC2c862687b1e6e32f4965c5127daeb626'  # حساب SID الخاص بـ Twilio
+TWILIO_AUTH_TOKEN = '11f17b80eb701998e5ce95f909b63e2b'  # رمز التفويض الخاص بـ Twilio
 
 # متغير لتتبع ما إذا تم تنفيذ الأتمتة أم لا
 automation_executed = False
@@ -48,7 +48,7 @@ def send_sms(latitude, longitude):
     message = client.messages.create(
         body=message_body,
         from_=TWILIO_PHONE_NUMBER,
-        to="your_phone_number"  # ضع هنا رقم هاتفك لتلقي الرسالة
+        to="+201005210580"  # ضع هنا رقم هاتفك لتلقي الرسالة
     )
 
     print(f"تم إرسال الرسالة بنجاح! SID: {message.sid}")
